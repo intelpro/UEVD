@@ -113,13 +113,17 @@
                 </h2>
                 
                 <p class="text-justify">
-                A majority of approaches solve the problem of video frame interpolation by computing bidirectional optical flow between adjacent frames of a video followed by a suitable warping algorithm to generate the output frames. However, methods relying on optical flow often fail to model occlusions and complex non-linear motions directly from the video and introduce additional bottlenecks unsuitable for easy deployment. <br> <br>
-
-                To overcome these limitations, we propose a flexible and efficient architecture that makes use of 3D space-time convolutions to enable end to end learning and inference for the task of video frame interpolation. Our method efficiently learns to reason about non-linear motions, complex occlusions and temporal abstractions resulting in improved performance on video interpolation, while requiring no additional inputs in the form of optical flow or depth maps. <br> <br>
-
-                <!-- <img src="FLAVR_files/plot.png" alt="overview" width="320" height="240" class="center"> <br> -->
-
-                Due to its simplicity, our proposed method improves the inference speed on video frame interpolation. In addition, we evaluate our model on a wide range of challenging settings and consistently demonstrate superior qualitative and quantitative results compared with current methods on various popular benchmarks including Vimeo-90K, UCF101, DAVIS, Adobe, and GoPro. Finally, we demonstrate that video frame interpolation can serve as a useful self-supervised pretext task for action recognition, optical flow estimation, and motion magnification.
+                    Motion deblurring is a highly ill-posed problem due to the loss of motion information 
+                    in the blur degradation process. 
+                    Since event cameras can capture apparent motion with a high temporal resolution, 
+                    several attempts have explored the potential of events for guiding deblurring. 
+                    These methods generally assume that the exposure time is the same as 
+                    the reciprocal of the video frame rate. 
+                    However, this is not true in real situations, and the exposure time might be 
+                    unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
+                    In this paper, we address the event-guided motion deblurring assuming dynamically variable
+                    unknown exposure time of the frame-based
+                    camera. To this end, we first derive a new formulation for event-guided motion deblurring by considering the exposure and readout time in the video frame acquisition process. We then propose a novel end-to-end learning framework for event-guided motion deblurring. In particular, we design a novel Exposure Time-based Event Selection(ETES) module to selectively use event features by estimating the cross-modal correlation between the features from blurred frames and the events. Moreover, we propose a feature fusion module to fuse the selected features from events and blur frames effectively. We conduct extensive experiments on various datasets and demonstrate that our method achieves state-of-the-art performance.  
                 </p>
             </div>
         </div>
@@ -129,7 +133,7 @@
         <div class="row">
             <div class="col-md-20 col-md-offset-0">
                 <h2 style="text-align:center">
-                    SlowMotion Effect Using FLAVR
+                    Qualitative Videos on real-world blurry videos
                 </h2>
                 <table width="100%">
                 <tr>
