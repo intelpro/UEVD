@@ -42,12 +42,16 @@
 </div>
 
 <div class="container">
-	<h2>Introduction</h2>
+	<h2>Abstracts</h2>
     <div class="section">
         </div>
         <hr>
         <p>
-		Motion deblurring is a highly ill-posed problem due to the loss of motion information in the blur degradation process. Since event cameras can capture apparent motion with a high temporal resolution, several attempts have explored the potential of events for guiding deblurring. These methods generally assume that the exposure time is the same as the reciprocal of the video frame rate. However, this is not true in real situations, and the exposure time might be unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
+		Motion deblurring is a highly ill-posed problem due to the loss of motion information in the blur degradation process. 
+		Since event cameras can capture apparent motion with a high temporal resolution, 
+		several attempts have explored the potential of events for guiding deblurring. 
+		These methods generally assume that the exposure time is the same as the reciprocal of the video frame rate. 
+		However, this is not true in real situations, and the exposure time might be unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
 		In this paper, we address the event-guided motion deblurring assuming dynamically variable unknown exposure time of the frame-based
 		camera. To this end, we first derive a new formulation for event-guided motion deblurring by considering the exposure and readout time in the video frame acquisition process. We then propose a novel end-to-end learning framework for event-guided motion deblurring. In particular, we design a novel Exposure Time-based Event Selection(ETES) module to selectively use event features by estimating the cross-modal correlation between the features from blurred frames and the events. Moreover, we propose a feature fusion module to fuse the selected features from events and blur frames effectively. We conduct extensive experiments on various datasets and demonstrate that our method achieves state-of-the-art performance. 
         </p>
