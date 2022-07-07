@@ -45,7 +45,7 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="https://tarun005.github.io/", target="_blank">
+                        <a href="https://intelpro.github.io/", target="_blank">
                           <span style="font-size:24px"> Taewoo Kim
                         </a><sup>1</sup> </span>
                     </li>
@@ -72,13 +72,10 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <span style="font-size:18px"> <sup>1</sup>UC San Diego </span>
+                        <span style="font-size:18px"> <sup>1</sup> KAIST </span>
                     </li>
                     <li>
-                        <span style="font-size:18px"> <sup>2</sup>Carnegie Mellon University </span>
-                    </li>
-                    <li>
-                        <span style="font-size:18px"> <sup>3</sup>Facebook AI </span>
+                        <span style="font-size:18px"> <sup>2</sup> HKUST </span>
                     </li>
                 </ul>
             </div>
@@ -109,21 +106,21 @@
       </tr>
       </table>
 
-      <div class="row">
-            <div class="col-md-20 col-md-offset-0">
+        <div class="row" style="background-color:#F5F5F5;">
+            <div class="col-md-20 col-md-offset-0" background-color="#DCDCDC">
                 <h2 style="text-align:center">
-                    Highlights
+                    Overview
                 </h2>
+                
                 <p class="text-justify">
-                    </p><ul>
-                        <li>
-                            A flow-free and single-shot prediction approach for video frame interpolation. 
-                        </li>
-                        <li>
-                            Uses 3D convolutions to capture motion trajectories.
-                        </li>
-                    </ul>
-                <p></p>
+                A majority of approaches solve the problem of video frame interpolation by computing bidirectional optical flow between adjacent frames of a video followed by a suitable warping algorithm to generate the output frames. However, methods relying on optical flow often fail to model occlusions and complex non-linear motions directly from the video and introduce additional bottlenecks unsuitable for easy deployment. <br> <br>
+
+                To overcome these limitations, we propose a flexible and efficient architecture that makes use of 3D space-time convolutions to enable end to end learning and inference for the task of video frame interpolation. Our method efficiently learns to reason about non-linear motions, complex occlusions and temporal abstractions resulting in improved performance on video interpolation, while requiring no additional inputs in the form of optical flow or depth maps. <br> <br>
+
+                <!-- <img src="FLAVR_files/plot.png" alt="overview" width="320" height="240" class="center"> <br> -->
+
+                Due to its simplicity, our proposed method improves the inference speed on video frame interpolation. In addition, we evaluate our model on a wide range of challenging settings and consistently demonstrate superior qualitative and quantitative results compared with current methods on various popular benchmarks including Vimeo-90K, UCF101, DAVIS, Adobe, and GoPro. Finally, we demonstrate that video frame interpolation can serve as a useful self-supervised pretext task for action recognition, optical flow estimation, and motion magnification.
+                </p>
             </div>
         </div>
 
@@ -225,23 +222,6 @@
         
 
 
-        <div class="row" style="background-color:#F5F5F5;">
-            <div class="col-md-20 col-md-offset-0" background-color="#DCDCDC">
-                <h2 style="text-align:center">
-                    Overview
-                </h2>
-                
-                <p class="text-justify">
-                A majority of approaches solve the problem of video frame interpolation by computing bidirectional optical flow between adjacent frames of a video followed by a suitable warping algorithm to generate the output frames. However, methods relying on optical flow often fail to model occlusions and complex non-linear motions directly from the video and introduce additional bottlenecks unsuitable for easy deployment. <br> <br>
-
-                To overcome these limitations, we propose a flexible and efficient architecture that makes use of 3D space-time convolutions to enable end to end learning and inference for the task of video frame interpolation. Our method efficiently learns to reason about non-linear motions, complex occlusions and temporal abstractions resulting in improved performance on video interpolation, while requiring no additional inputs in the form of optical flow or depth maps. <br> <br>
-
-                <!-- <img src="FLAVR_files/plot.png" alt="overview" width="320" height="240" class="center"> <br> -->
-
-                Due to its simplicity, our proposed method improves the inference speed on video frame interpolation. In addition, we evaluate our model on a wide range of challenging settings and consistently demonstrate superior qualitative and quantitative results compared with current methods on various popular benchmarks including Vimeo-90K, UCF101, DAVIS, Adobe, and GoPro. Finally, we demonstrate that video frame interpolation can serve as a useful self-supervised pretext task for action recognition, optical flow estimation, and motion magnification.
-                </p>
-            </div>
-        </div>
 
         
 
