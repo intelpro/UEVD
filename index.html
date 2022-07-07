@@ -1,122 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>FLAVR</title>
+
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="Event-guided Deblurring of Unknown Exposure Time Videos">
-    <meta name="author" content="Taewoo Kim,
-                                 Jeong-Min Lee,
-                                 Wang Lin,
-                                 Kuk-jin Yoon">
 
-    <title>Event-guided Deblurring of Unknown Exposure Time Videos</title>
-    <!-- Bootstrap core CSS -->
-    <!--link href="bootstrap.min.css" rel="stylesheet"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="FLAVR_files/ucsd_logo.png">
+    <link rel="stylesheet" href="FLAVR_files/bootstrap.css">
+    <link rel="stylesheet" href="FLAVR_files/font-awesome.css">
+    <link rel="stylesheet" href="FLAVR_files/codemirror.css">
+    <link rel="stylesheet" href="FLAVR_files/app.css">
+    <!-- <link rel="stylesheet" href="FLAVR_files/bootstrap_002.css"> -->
+    <link rel="stylesheet" type="text/css" href="FLAVR_files/style.css">
 
-    <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
-    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+    <script type="text/javascript" async="" src="FLAVR_files/analytics_002.js"></script><script type="text/javascript" async="" src="FLAVR_files/analytics.js"></script>
+    <script type="text/javascript" async="" src="FLAVR_files/analytics1.js"></script>
+    <script async="" src="FLAVR_files/js.dms"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="FLAVR_files/jquery.js"></script>
+    <script src="FLAVR_files/bootstrap.js"></script>
+    <script src="FLAVR_files/codemirror.js"></script>
+    <script src="FLAVR_files/clipboard.js"></script>
+    <script src="FLAVR_files/app.js"></script>
 </head>
 
-<body>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container"></div>
-    <h2> Event-guided Deblurring of Unknown Exposure Time Videos</h2>
-<!--            <p class="abstract">An interpretable, data-efficient, and scalable neural scene representation.</p>-->
-    <hr>
-    <p class="authors">
-        <a href="https://intelpro.github.io">Taewoo Kim</a>,
-        <a href="vi.kaist.ac.kr">Jeong-Min Lee</a>,
-        <a href="vi.kaist.ac.kr">Lin Wang</a>,
-	<a href="vi.kaist.ac.kr">Kuk-Jin Yoon</a>.
-    </p>
-    <div class="btn-group" role="group" aria-label="Top menu">
-        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460358.pdf" class="btn btn-primary">Paper</a>
-        <a href="https://github.com/WangJiuniu/DistinctiveCap" class="btn btn-primary">Code</a>
-	<a href="https://github.com/WangJiuniu/DistinctiveCap" class="btn btn-primary">Dataset</a>
-    </div>
-</div>
 
-<div class="container">
-	<h2>Abstracts</h2>
-    <div class="section">
+<body data-gr-c-s-loaded="true" font-family="HelveticaNeue-Light">
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <span style="font-size:40px"> FLAVR: Flow-Agnostic Video Representations <br> for Fast Frame Interpolation </span>
+            </h1>
         </div>
-        <p>
-		Motion deblurring is a highly ill-posed problem due to the loss of motion information in the blur degradation process. 
-		Since event cameras can capture apparent motion with a high temporal resolution, 
-		several attempts have explored the potential of events for guiding deblurring. 
-		These methods generally assume that the exposure time is the same as the reciprocal of the video frame rate. 
-		However, this is not true in real situations, and the exposure time might be unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
-		In this paper, we address the event-guided motion deblurring assuming dynamically variable unknown exposure time of the frame-based
-		camera. To this end, we first derive a new formulation for event-guided motion deblurring by considering the exposure and readout time in the video frame acquisition process. We then propose a novel end-to-end learning framework for event-guided motion deblurring. In particular, we design a novel Exposure Time-based Event Selection(ETES) module to selectively use event features by estimating the cross-modal correlation between the features from blurred frames and the events. Moreover, we propose a feature fusion module to fuse the selected features from events and blur frames effectively. We conduct extensive experiments on various datasets and demonstrate that our method achieves state-of-the-art performance. 
-        </p>
-    </div>
-	
-<div class="container">
-	<h2>Qualitative Results</h2>
-    <div class="section">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://tarun005.github.io/", target="_blank">
+                          <span style="font-size:24px"> Tarun Kalluri 
+                        </a><sup>1</sup> </span>
+                    </li>
+                    <li>
+                        <a href="https://www.cs.cmu.edu/~dpathak/", target="_blank">
+                          <span style="font-size:24px"> Deepak Pathak 
+                        </a><sup>2</sup> </span>
+                    </li>
+                    <li>
+                        <a href="http://cseweb.ucsd.edu/~mkchandraker/", target="_blank">
+                          <span style="font-size:24px"> Manmohan Chandraker 
+                        </a><sup>1</sup> </span>
+                    </li>
+                    <li>
+                        <a href="https://dutran.github.io/", target="_blank">
+                          <span style="font-size:24px"> Du Tran 
+                        </a><sup>3</sup> </span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <p>
-		Motion deblurring is a highly ill-posed problem due to the loss of motion information in the blur degradation process. 
-		Since event cameras can capture apparent motion with a high temporal resolution, 
-		several attempts have explored the potential of events for guiding deblurring. 
-		These methods generally assume that the exposure time is the same as the reciprocal of the video frame rate. 
-		However, this is not true in real situations, and the exposure time might be unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
-		In this paper, we address the event-guided motion deblurring assuming dynamically variable unknown exposure time of the frame-based
-		camera. To this end, we first derive a new formulation for event-guided motion deblurring by considering the exposure and readout time in the video frame acquisition process. We then propose a novel end-to-end learning framework for event-guided motion deblurring. In particular, we design a novel Exposure Time-based Event Selection(ETES) module to selectively use event features by estimating the cross-modal correlation between the features from blurred frames and the events. Moreover, we propose a feature fusion module to fuse the selected features from events and blur frames effectively. We conduct extensive experiments on various datasets and demonstrate that our method achieves state-of-the-art performance. 
-        </p>
-    </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <span style="font-size:18px"> <sup>1</sup>UC San Diego </span>
+                    </li>
+                    <li>
+                        <span style="font-size:18px"> <sup>2</sup>Carnegie Mellon University </span>
+                    </li>
+                    <li>
+                        <span style="font-size:18px"> <sup>3</sup>Facebook AI </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-   
-    <div class="section">
-        <h2>Paper</h2>
-        <hr>
-        <div>
-           <div class="list-group">
-                <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460358.pdf"
-                   class="list-group-item">
-                    <img src="images/paper_thumbnail.png" style="width:100%;">
-                    <!-- <img src="images/paper_thumbnail.png" style="width:100%; margin-right:-20px; margin-top:-10px;">
-                    -->
-                </a>
+        <br>
+
+        <table width="800px" align="center">
+        <tr>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://arxiv.org/pdf/2012.08512.pdf" target="_blank"> <img src="./FLAVR_files/paper.png" class="layered-paper-big"  height="70px"><br>
+              Paper </a></span>
+            </center>
+          </td>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://youtu.be/TcQd0LCLCzo" target="_blank"> <img src="./FLAVR_files/youtube_icon_dark.png" height="90px"><br>
+              Project Video </a></span>
+            </center>
+          </td>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://github.com/tarun005/FLAVR" target="_blank"> <img " src="./FLAVR_files/github_pad.png" height="90px"><br>
+                Code </a></span>
+            </center>
+          </td>
+      </tr>
+      </table>
+
+      <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h2 style="text-align:center">
+                    Highlights
+                </h2>
+                <p class="text-justify">
+                    </p><ul>
+                        <li>
+                            A flow-free and single-shot prediction approach for video frame interpolation. 
+                        </li>
+                        <li>
+                            Uses 3D convolutions to capture motion trajectories.
+                        </li>
+                    </ul>
+                <p></p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h2 style="text-align:center">
+                    SlowMotion Effect Using FLAVR
+                </h2>
+                <table width="100%">
+                <tr>
+                <td >
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video autoplay="true" id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/YouTube_Clips/baloon.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                </td>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video autoplay="true" id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/YouTube_Clips/tennis.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    &nbsp; &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video autoplay="true" id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/YouTube_Clips/coke.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </td>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video autoplay="true" id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/YouTube_Clips/sprite.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </td>
+                </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h2 style="text-align:center">
+                    Ultra SlowMotion on Insect Flights
+                </h2>
+                <table width="100%">
+                <tr>
+                <td >
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/webpage_InsectClips/Seq1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                </td>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="FLAVR_files/webpage_InsectClips/Seq2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </td>
+                </tr>
+            <tr>
+                <td >
+                    &nbsp; &nbsp;
+                </td>
+            </tr>
+            </table>
+            </div>
+        </div>
+        
+
+
+        <div class="row" style="background-color:#F5F5F5;">
+            <div class="col-md-20 col-md-offset-0" background-color="#DCDCDC">
+                <h2 style="text-align:center">
+                    Overview
+                </h2>
+                
+                <p class="text-justify">
+                A majority of approaches solve the problem of video frame interpolation by computing bidirectional optical flow between adjacent frames of a video followed by a suitable warping algorithm to generate the output frames. However, methods relying on optical flow often fail to model occlusions and complex non-linear motions directly from the video and introduce additional bottlenecks unsuitable for easy deployment. <br> <br>
+
+                To overcome these limitations, we propose a flexible and efficient architecture that makes use of 3D space-time convolutions to enable end to end learning and inference for the task of video frame interpolation. Our method efficiently learns to reason about non-linear motions, complex occlusions and temporal abstractions resulting in improved performance on video interpolation, while requiring no additional inputs in the form of optical flow or depth maps. <br> <br>
+
+                <!-- <img src="FLAVR_files/plot.png" alt="overview" width="320" height="240" class="center"> <br> -->
+
+                Due to its simplicity, our proposed method improves the inference speed on video frame interpolation. In addition, we evaluate our model on a wide range of challenging settings and consistently demonstrate superior qualitative and quantitative results compared with current methods on various popular benchmarks including Vimeo-90K, UCF101, DAVIS, Adobe, and GoPro. Finally, we demonstrate that video frame interpolation can serve as a useful self-supervised pretext task for action recognition, optical flow estimation, and motion magnification.
+                </p>
+            </div>
+        </div>
+
+        
+
+        <!-- <div class="row"> -->
+        <!--     <div class="col-md-8 col-md-offset-2"> -->
+        <!--         <h2 style="text-align:center"> -->
+        <!--             Project Video -->
+        <!--         </h2> -->
+        <!--         <div class="text-center"> -->
+        <!--         <iframe width="680" height="375" src="https://www.youtube.com/embed/TcQd0LCLCzo"> -->
+        <!--         </iframe> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!-- </div> -->
+
+        
+        <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h3 style="text-align:center">
+                    Acknowledgments
+                </h3>
+                We would like to thank Adrian Smith for providing us with the insect videos. The website template was borrowed from Zhenqin Li's <a href="https://ucsd-openrooms.github.io/">project</a>.
+                <p></p>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Bibtex</h2>
-        <hr>
-        <div class="bibtexsection">
-    @inproceedings{wang2020compare,
-        title={Compare and Reweight: Distinctive Image Captioning Using Similar Images Sets},
-        author={Wang, Jiuniu and Xu, Wenjia and Wang, Qingzhong and Chan, Antoni B},
-        booktitle={ECCV},
-        year={2020}
-    }
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>Send feedback and questions to <a href="https://wangjiuniu.github.io/">Jiuniu Wang</a></p>
-    </footer>
-</div>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 
-</body>
-</html>
+</body></html>
