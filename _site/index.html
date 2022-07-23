@@ -1,0 +1,218 @@
+<htmlr><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>UEVD</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="files/ucsd_logo.png">
+    <link rel="stylesheet" href="files/bootstrap.css">
+    <link rel="stylesheet" href="files/font-awesome.css">
+    <link rel="stylesheet" href="files/codemirror.css">
+    <link rel="stylesheet" href="files/app.css">
+    <!-- <link rel="stylesheet" href="files/bootstrap_002.css"> -->
+    <link rel="stylesheet" type="text/css" href="files/style.css">
+
+    <script type="text/javascript" async="" src="files/analytics_002.js"></script><script type="text/javascript" async="" src="files/analytics.js"></script>
+    <script type="text/javascript" async="" src="files/analytics1.js"></script>
+    <script async="" src="files/js.dms"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-110862391-3');
+    </script>
+
+    <script src="files/jquery.js"></script>
+    <script src="files/bootstrap.js"></script>
+    <script src="files/codemirror.js"></script>
+    <script src="files/clipboard.js"></script>
+    <script src="files/app.js"></script>
+</head>
+
+
+<body data-gr-c-s-loaded="true" font-family="HelveticaNeue-Light">
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                <span style="font-size:50px"> Event-guided Deblurring of Unknown Exposure Time Videos </span>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://intelpro.github.io/", target="_blank">
+                          <span style="font-size:24px"> Taewoo Kim
+                        </a><sup>1</sup> </span>
+                    </li>
+                    <li>
+                        <a href="https://vi.kaist.ac.kr", target="_blank">
+                          <span style="font-size:24px"> Jeongmin Lee
+                        </a><sup>1</sup> </span>
+                    </li>
+                    <li>
+                        <a href="http://vi.kaist.ac.kr/", target="_blank">
+                          <span style="font-size:24px"> Lin Wang
+                        </a><sup>2</sup> </span>
+                    </li>
+                    <li>
+                        <a href="https://vi.kaist.ac.kr/", target="_blank">
+                          <span style="font-size:24px"> Kuk-jin Yoon
+                        </a><sup>1</sup> </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <span style="font-size:18px"> <sup>1</sup> KAIST </span>
+                    </li>
+                    <li>
+                        <span style="font-size:18px"> <sup>2</sup> HKUST </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+
+        <table width="800px" align="center">
+        <tr>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://arxiv.org/pdf/2112.06988.pdf" target="_blank"> <img src="./files/paper.png" class="layered-paper-big"  height="70px"><br>
+              Paper </a></span>
+            </center>
+          </td>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://drive.google.com/drive/folders/1h9_RqRybRMnTOsEuhFlHlaNy_OE68VUo?usp=sharing" target="_blank"> <img src="./files/database_icon_dark2.png" height="90px"><br>
+              Datasets </a></span>
+            </center>
+          </td>
+          <td align=center width=70px>
+            <center>
+              <span style="font-size:24px"><a href="https://github.com/intelpro/UEVD_public" target="_blank"> <img " src="./files/github_pad.png" height="90px"><br>
+                Code </a></span>
+            </center>
+          </td>
+      </tr>
+      </table>
+
+        <div class="row" style="background-color:#F5F5F5;">
+            <div class="col-md-20 col-md-offset-0" background-color="#DCDCDC">
+                <h2 style="text-align:center">
+                    Abstracts
+                </h2>
+                
+                <p class="text-justify">
+                    Motion deblurring is a highly ill-posed problem due to the loss of motion information 
+                    in the blur degradation process. 
+                    Since event cameras can capture apparent motion with a high temporal resolution, 
+                    several attempts have explored the potential of events for guiding deblurring. 
+                    These methods generally assume that the exposure time is the same as 
+                    the reciprocal of the video frame rate. 
+                    However, this is not true in real situations, and the exposure time might be 
+                    unknown and dynamically varies depending on the video shooting environment(e.g., illumination condition). 
+                    In this paper, we address the event-guided motion deblurring assuming dynamically variable
+                    unknown exposure time of the frame-based
+                    camera. To this end, we first derive a new formulation for event-guided motion deblurring by 
+                    considering the exposure and readout time in the video frame acquisition process. 
+                    We then propose a novel end-to-end learning framework for event-guided motion deblurring.
+                    In particular, we design a novel Exposure Time-based Event Selection(ETES) module to selectively 
+                    use event features by estimating the cross-modal correlation between the features from blurred frames
+                    and the events. Moreover, we propose a feature fusion module to fuse the selected 
+                    features from events and blur frames effectively.
+                    We conduct extensive experiments on various datasets and demonstrate 
+                    that our method achieves SOTA performance.  
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h2 style="text-align:center">
+                    Qualitative demos on real-world blurry videos
+                </h2>
+                <table width="85%">
+                <tr>
+                <td >
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" width="100%">
+                <div class="row"></div>
+                    <div class="col-md-16 col-md-offset-2">
+                        <video autoplay="true" id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="./files/videos/video_results_real_blur.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <td >
+                    &nbsp; &nbsp;
+                </td>
+            </tr>
+
+ 
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-20 col-md-offset-0">
+                <h2 style="text-align:center">
+                    Qualitative demos on real-world event dataset
+                </h2>
+                <table width="85%">
+                <tr>
+                <td >
+                </td>
+                </tr>
+                <tr>
+                <td align="center" valign="top" width="45%">
+                <div class="row">
+                    <div class="col-md-16 col-md-offset-2">
+                        <video id="v0" loop="true" muted="muted" controls="controls" width="100%">
+                          <source src="./files/videos/video_results_dvs.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                </td>
+                </tr>
+            <tr>
+                <td >
+                    &nbsp; &nbsp;
+                </td>
+            </tr>
+            </table>
+            </div>
+        </div>
+
+        
+
+        <!-- <div class="row"> -->
+        <!--     <div class="col-md-8 col-md-offset-2"> -->
+        <!--         <h2 style="text-align:center"> -->
+        <!--             Project Video -->
+        <!--         </h2> -->
+        <!--         <div class="text-center"> -->
+        <!--         <iframe width="680" height="375" src="https://www.youtube.com/embed/TcQd0LCLCzo"> -->
+        <!--         </iframe> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!-- </div> -->
+    </div>
+
+
+
+
+</body></html>
